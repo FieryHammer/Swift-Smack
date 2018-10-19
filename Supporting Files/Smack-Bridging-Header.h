@@ -1,5 +1,9 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  Smack-Bridging-Header.h
+//  Smack
+//
+//  Created by Horvath, Mate on 2018. 10. 18..
+//  Copyright © 2018. Finastra. All rights reserved.
 //
 
 #import "SWRevealViewController.h"
