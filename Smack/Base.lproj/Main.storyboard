@@ -248,7 +248,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQ5-jh-76w">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQ5-jh-76w" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="286" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509803922" green="0.62352941176470589" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -259,6 +259,11 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -306,7 +311,7 @@
                                     <action selector="closeBtnPressed:" destination="Jow-y9-dZI" eventType="touchUpInside" id="nJ7-yF-xCB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tp-UV-JDy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tp-UV-JDy" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="597" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -317,6 +322,14 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAccountBtnPressed:" destination="9ty-Q6-gK5" eventType="touchUpInside" id="6bj-LH-WCq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zd-Rx-2gg">
                                 <rect key="frame" x="137.5" y="299" width="100" height="130"/>
@@ -328,7 +341,7 @@
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="createAccountBtnPressed:" destination="Jow-y9-dZI" eventType="touchUpInside" id="qf7-Jf-b4S"/>
+                                    <action selector="pickAvatarPressed:" destination="9ty-Q6-gK5" eventType="touchUpInside" id="iQr-ih-33n"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="h3w-C9-LyR">
@@ -358,7 +371,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.36405026909999999" green="0.40604662899999999" blue="0.88014847039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lm1-hZ-9su">
                                         <rect key="frame" x="0.0" y="84" width="250" height="2"/>
@@ -375,7 +388,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.36405026909999999" green="0.40604662899999999" blue="0.88014847039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJ3-bs-b2A">
                                         <rect key="frame" x="0.0" y="134" width="250" height="2"/>
@@ -405,7 +418,7 @@
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="createAccountBtnPressed:" destination="Jow-y9-dZI" eventType="touchUpInside" id="XWO-gn-REw"/>
+                                    <action selector="generateBackgroundBtnPressed:" destination="9ty-Q6-gK5" eventType="touchUpInside" id="cKl-hO-NbF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -430,6 +443,10 @@
                         <viewLayoutGuide key="safeArea" id="3rp-aO-Gif"/>
                     </view>
                     <connections>
+                        <outlet property="emailTxtFld" destination="PjX-g2-XSC" id="W5h-jI-Vtu"/>
+                        <outlet property="passwordTxtFld" destination="oAD-QV-k1i" id="Mao-qc-ACO"/>
+                        <outlet property="userImg" destination="Kpg-Bc-fgz" id="pz4-L3-84y"/>
+                        <outlet property="usernameTxtFld" destination="fVb-zk-aIe" id="ciU-7w-THw"/>
                         <segue destination="LGC-Az-8KA" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="Unn-bp-V68"/>
                     </connections>
                 </viewController>
