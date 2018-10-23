@@ -476,7 +476,10 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wO1-tn-fDQ">
-                                <rect key="frame" x="142" y="28" width="91" height="29"/>
+                                <rect key="frame" x="112.5" y="28" width="150" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="WBI-rS-O1M"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Dark"/>
                                     <segment title="Light"/>
