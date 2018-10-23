@@ -34,25 +34,6 @@ class CreateAccountVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    @objc func keyboardDidAppear(notification: NSNotification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            
-            self.createAccountBottomConstraint.constant = keyboardHeight + 20
-            UIView.animate(withDuration: 0.4) {
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
-    
-    @objc func keyboardDidDisappear() {
-        self.createAccountBottomConstraint.constant = 20
-        UIView.animate(withDuration: 0.4) {
-            self.view.layoutIfNeeded()
-        }
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         if UserDataService.instance.avatarName != "" {
             userImg.image = UIImage(named: UserDataService.instance.avatarName)
@@ -123,6 +104,25 @@ class CreateAccountVC: UIViewController {
     
     @IBAction func closeBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: UNWIND, sender: nil)
+    }
+    
+    @objc func keyboardDidAppear(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            
+            self.createAccountBottomConstraint.constant = keyboardHeight + 20
+            UIView.animate(withDuration: 0.4) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    @objc func keyboardDidDisappear() {
+        self.createAccountBottomConstraint.constant = 20
+        UIView.animate(withDuration: 0.4) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     deinit {
