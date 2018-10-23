@@ -35,3 +35,6 @@ let HEADER = [
 
 // Colors
 let SMACK_PURPLE_PLACEHOLDER = #colorLiteral(red: 0.3254901961, green: 0.4196078431, blue: 0.7764705882, alpha: 0.5)
+
+// Notifications
+let NOTIFICATION_USER_DATA_DID_CHANGE = Notification.Name("notificationUserDataDidChange")
