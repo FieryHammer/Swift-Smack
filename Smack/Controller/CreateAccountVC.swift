@@ -41,6 +41,11 @@ class CreateAccountVC: UIViewController {
             
             if avatarName.contains("light") && bgColor == nil {
                 userImg.backgroundColor = UIColor.lightGray
+                bgColor = UIColor.lightGray
+            }
+            if avatarName.contains("dark") && bgColor == UIColor.lightGray {
+                userImg.backgroundColor = nil
+                bgColor = nil
             }
         }
     }
