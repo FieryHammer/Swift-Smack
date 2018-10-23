@@ -15,6 +15,7 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 let LOGIN_SEGUE = "loginVC"
 let CREATE_ACCOUNT_SEGUE = "createAccountVC"
 let UNWIND = "unwindToChannel"
+let AVATAR_PICKER_SEGUE = "avatarPickerVC"
 
 // User Defaults
 let TOKEN_KEY = "token"
@@ -25,6 +26,7 @@ let USER_EMAIL_KEY = "userEmail"
 let BASE_URL = "https://my-chatty-chat.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
+let URL_USER_ADD = "\(BASE_URL)user/add"
 
 // Headers
 
