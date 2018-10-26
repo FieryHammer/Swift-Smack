@@ -154,7 +154,8 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="LoginBtn" destination="4wq-ME-MJb" id="hue-A3-ngt"/>
+                        <outlet property="loginBtn" destination="4wq-ME-MJb" id="QAs-kr-AEf"/>
+                        <outlet property="userImgView" destination="xMU-Yc-gTN" id="jyn-4B-7Q8"/>
                         <segue destination="Jow-y9-dZI" kind="show" identifier="loginVC" id="sd9-ke-Ddm"/>
                     </connections>
                 </viewController>
