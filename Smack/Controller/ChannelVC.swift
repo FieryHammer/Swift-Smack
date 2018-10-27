@@ -24,14 +24,20 @@ class ChannelVC: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: LOGIN_SEGUE, sender: nil)
+        if AuthService.instance.isLoggedIn {
+            let profile = ProfileVC()
+            profile.modalPresentationStyle = .custom
+            present(profile, animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: LOGIN_SEGUE, sender: nil)
+        }
     }
     
     @objc func userDataDidChange(_ notification: Notification) {
         if AuthService.instance.isLoggedIn {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImgView.image = UIImage(named:UserDataService.instance.avatarName)
-            userImgView.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
+            userImgView.backgroundColor = UserDataService.instance.returnUIColor()
             
         } else {
             loginBtn.setTitle("Login", for: .normal)
