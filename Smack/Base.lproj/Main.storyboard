@@ -265,24 +265,36 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="Jow-y9-dZI" eventType="touchUpInside" id="sSC-8v-fqs"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6Jf-IB-dNd">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DQ5-jh-76w" firstAttribute="centerX" secondItem="dhQ-Lw-3EW" secondAttribute="centerX" id="14A-aA-GfW"/>
                             <constraint firstItem="JhN-0R-mPL" firstAttribute="centerX" secondItem="dhQ-Lw-3EW" secondAttribute="centerX" id="445-o3-ASb"/>
                             <constraint firstItem="JhN-0R-mPL" firstAttribute="top" secondItem="DQ5-jh-76w" secondAttribute="bottom" id="C1p-gG-y0y"/>
+                            <constraint firstItem="6Jf-IB-dNd" firstAttribute="centerY" secondItem="dhQ-Lw-3EW" secondAttribute="centerY" constant="-100" id="GMJ-Zr-bNz"/>
                             <constraint firstItem="fVv-Ia-DY7" firstAttribute="trailing" secondItem="THm-u4-XLk" secondAttribute="trailing" constant="15" id="M86-Zd-kKO"/>
                             <constraint firstItem="Bsa-fy-jkE" firstAttribute="top" secondItem="kmr-mB-b8C" secondAttribute="bottom" constant="40" id="Mpo-dq-HDm"/>
                             <constraint firstItem="kmr-mB-b8C" firstAttribute="top" secondItem="fVv-Ia-DY7" secondAttribute="top" constant="60" id="SEK-nt-yfQ"/>
                             <constraint firstItem="THm-u4-XLk" firstAttribute="top" secondItem="fVv-Ia-DY7" secondAttribute="top" constant="8" id="Z5r-qc-hpB"/>
                             <constraint firstItem="kmr-mB-b8C" firstAttribute="centerX" secondItem="dhQ-Lw-3EW" secondAttribute="centerX" id="bhR-MG-gd2"/>
                             <constraint firstItem="DQ5-jh-76w" firstAttribute="top" secondItem="Bsa-fy-jkE" secondAttribute="bottom" constant="40" id="kpp-Mb-ar8"/>
+                            <constraint firstItem="6Jf-IB-dNd" firstAttribute="centerX" secondItem="dhQ-Lw-3EW" secondAttribute="centerX" id="lII-qC-9lC"/>
                             <constraint firstItem="Bsa-fy-jkE" firstAttribute="centerX" secondItem="dhQ-Lw-3EW" secondAttribute="centerX" id="m5e-Q3-toV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fVv-Ia-DY7"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTxtFld" destination="8Xa-JL-AHT" id="zG7-uE-2nk"/>
+                        <outlet property="spinner" destination="6Jf-IB-dNd" id="96p-uh-EVz"/>
+                        <outlet property="usernameTxtFld" destination="wSp-i2-R4E" id="Kff-qN-8kO"/>
                         <segue destination="9ty-Q6-gK5" kind="show" identifier="createAccountVC" id="eoM-LP-1ex"/>
                     </connections>
                 </viewController>
@@ -424,7 +436,7 @@
                             </stackView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YFS-sI-9nH">
                                 <rect key="frame" x="169" y="215" width="37" height="37"/>
-                                <color key="color" red="0.36405026909999999" green="0.40604662899999999" blue="0.88014847039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -27,6 +27,8 @@
 		F1E726B2217F3A6F007D57C8 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E726B1217F3A6F007D57C8 /* CircleImage.swift */; };
 		F1E726B521846BF6007D57C8 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E726B321846BF6007D57C8 /* ProfileVC.swift */; };
 		F1E726B621846BF6007D57C8 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E726B421846BF6007D57C8 /* ProfileVC.xib */; };
+		F1E726B92184918B007D57C8 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E726B82184918B007D57C8 /* MessageService.swift */; };
+		F1E726BB218491CE007D57C8 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E726BA218491CE007D57C8 /* Channel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		F1E726B1217F3A6F007D57C8 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		F1E726B321846BF6007D57C8 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F1E726B421846BF6007D57C8 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		F1E726B82184918B007D57C8 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		F1E726BA218491CE007D57C8 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		F10DD9942178C1F800F919B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F1E726BA218491CE007D57C8 /* Channel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			children = (
 				F11DD194217A19E4000FF20D /* AuthService.swift */,
 				F1E726AB217D3023007D57C8 /* UserDataService.swift */,
+				F1E726B82184918B007D57C8 /* MessageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -314,7 +320,9 @@
 				F10DD99A2178C24500F919B0 /* ChannelVC.swift in Sources */,
 				F1E726AE217F1DEC007D57C8 /* AvatarPickerVC.swift in Sources */,
 				F11DD197217A2921000FF20D /* RoundedButton.swift in Sources */,
+				F1E726BB218491CE007D57C8 /* Channel.swift in Sources */,
 				F1E726B2217F3A6F007D57C8 /* CircleImage.swift in Sources */,
+				F1E726B92184918B007D57C8 /* MessageService.swift in Sources */,
 				F10DD9982178C23600F919B0 /* ChatVC.swift in Sources */,
 				F1E726AC217D3023007D57C8 /* UserDataService.swift in Sources */,
 				F11DD1922179E541000FF20D /* CreateAccountVC.swift in Sources */,

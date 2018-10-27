@@ -53,6 +53,7 @@ class CreateAccountVC: UIViewController {
     @IBAction func createAccountBtnPressed(_ sender: Any) {
         spinner.isHidden = false
         spinner.startAnimating()
+        view.isUserInteractionEnabled = false
         
         guard let name = usernameTxtFld.text, usernameTxtFld.text != "" else { return }
         guard let email = emailTxtFld.text, emailTxtFld.text != "" else { return }
@@ -69,9 +70,14 @@ class CreateAccountVC: UIViewController {
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
                                 NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_DID_CHANGE, object: nil)
                             }
+                            self.view.isUserInteractionEnabled = true
                         })
+                    } else {
+                        self.view.isUserInteractionEnabled = true
                     }
                 })
+            } else {
+                self.view.isUserInteractionEnabled = true
             }
         }
     }
