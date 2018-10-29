@@ -14,9 +14,9 @@ struct Channel: Decodable {
     public private(set) var description: String!
     public private(set) var __v: Int?
     
-//    init(title: String, description: String, id: String) {
-//        self.title = title
-//        self.description = description
-//        self.id = id
-//    }
+    init(name: String, description: String, id: String) {
+        self.name = name
+        self.description = description
+        self._id = id
+    }
 }
