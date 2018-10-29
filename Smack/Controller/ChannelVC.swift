@@ -13,6 +13,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var userImgView: CircleImage!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addChannelBtn: UIButton!
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
     
@@ -25,6 +26,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
         
         NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChange(_:)), name: NOTIFICATION_USER_DATA_DID_CHANGE, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(channelsLoaded(_:)), name: NOTIFICATION_CHANNELS_LOADED, object: nil)
         
         SocketService.instance.getChannel { (success) in
             if success {
@@ -53,7 +55,24 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         setupUserInfo()
     }
     
+    @objc func channelsLoaded(_ notification: Notification) {
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channelSelected = MessageService.instance.channels[indexPath.row]
+        MessageService.instance.selectedChannel = channelSelected
+        
+        NotificationCenter.default.post(name: NOTIFICATION_CHANNEL_SELECTED, object: nil)
+        
+        self.revealViewController()?.revealToggle(animated: true)
+    }
+    
     @IBAction func addChannelBtnPressed(_ sender: Any) {
+        if !AuthService.instance.isLoggedIn {
+            return
+        }
+        
         let addChannel = AddChannelVC()
         addChannel.modalPresentationStyle = .custom
         present(addChannel, animated: true, completion: nil)
@@ -64,11 +83,14 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImgView.image = UIImage(named:UserDataService.instance.avatarName)
             userImgView.backgroundColor = UserDataService.instance.returnUIColor()
+            addChannelBtn.isHidden = false
             
         } else {
             loginBtn.setTitle("Login", for: .normal)
             userImgView.image = UIImage(named: "menuProfileIcon")
             userImgView.backgroundColor = UIColor.clear
+            tableView.reloadData()
+            addChannelBtn.isHidden = true
         }
     }
     

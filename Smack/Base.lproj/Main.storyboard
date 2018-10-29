@@ -54,6 +54,7 @@
                         <viewLayoutGuide key="safeArea" id="3Dx-QE-0Z0"/>
                     </view>
                     <connections>
+                        <outlet property="channelNameLbl" destination="ajc-iS-uG2" id="1ZC-Y4-qL7"/>
                         <outlet property="menuBtn" destination="rti-7p-h3O" id="jym-32-3pQ"/>
                     </connections>
                 </viewController>
@@ -160,6 +161,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="addChannelBtn" destination="yO2-KR-ynC" id="b6j-is-oLI"/>
                         <outlet property="loginBtn" destination="4wq-ME-MJb" id="QAs-kr-AEf"/>
                         <outlet property="tableView" destination="ktD-jI-5Bv" id="i32-Jp-xuA"/>
                         <outlet property="userImgView" destination="xMU-Yc-gTN" id="jyn-4B-7Q8"/>
