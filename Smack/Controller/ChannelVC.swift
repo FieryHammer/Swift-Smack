@@ -33,6 +33,13 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.tableView.reloadData()
             }
         }
+        
+        SocketService.instance.getMessage { (message) in
+            if message.channelId != MessageService.instance.selectedChannel?._id && AuthService.instance.isLoggedIn{
+                MessageService.instance.unreadChannels.insert(message.channelId)
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,6 +71,10 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         MessageService.instance.selectedChannel = channelSelected
         
         NotificationCenter.default.post(name: NOTIFICATION_CHANNEL_SELECTED, object: nil)
+        
+        MessageService.instance.unreadChannels.remove(channelSelected._id)
+        tableView.reloadRows(at: [indexPath], with: .none)
+        tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         
         self.revealViewController()?.revealToggle(animated: true)
     }
