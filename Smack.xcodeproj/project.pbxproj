@@ -22,6 +22,7 @@
 		F1881BB62178BBED009E4765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1881BB52178BBED009E4765 /* Assets.xcassets */; };
 		F1881BB92178BBED009E4765 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1881BB72178BBED009E4765 /* LaunchScreen.storyboard */; };
 		F18E7A1F21874FF4008ED930 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E7A1E21874FF4008ED930 /* KeyboardBoundView.swift */; };
+		F18E7A21218758B9008ED930 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E7A20218758B9008ED930 /* MessageCell.swift */; };
 		F1E726AC217D3023007D57C8 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E726AB217D3023007D57C8 /* UserDataService.swift */; };
 		F1E726AE217F1DEC007D57C8 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E726AD217F1DEC007D57C8 /* AvatarPickerVC.swift */; };
 		F1E726B0217F200A007D57C8 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E726AF217F200A007D57C8 /* AvatarCell.swift */; };
@@ -59,6 +60,7 @@
 		F1881BB82178BBED009E4765 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1881BBA2178BBED009E4765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F18E7A1E21874FF4008ED930 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		F18E7A20218758B9008ED930 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		F1E726AB217D3023007D57C8 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		F1E726AD217F1DEC007D57C8 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		F1E726AF217F200A007D57C8 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				F1E726B1217F3A6F007D57C8 /* CircleImage.swift */,
 				F1E726BC2185F036007D57C8 /* ChannelCell.swift */,
 				F18E7A1E21874FF4008ED930 /* KeyboardBoundView.swift */,
+				F18E7A20218758B9008ED930 /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				F1E726BD2185F036007D57C8 /* ChannelCell.swift in Sources */,
 				F10DD99A2178C24500F919B0 /* ChannelVC.swift in Sources */,
 				F1E726AE217F1DEC007D57C8 /* AvatarPickerVC.swift in Sources */,
+				F18E7A21218758B9008ED930 /* MessageCell.swift in Sources */,
 				F11DD197217A2921000FF20D /* RoundedButton.swift in Sources */,
 				F1E726CA21871C6E007D57C8 /* Message.swift in Sources */,
 				F1E726BB218491CE007D57C8 /* Channel.swift in Sources */,

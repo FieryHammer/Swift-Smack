@@ -82,7 +82,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if AuthService.instance.isLoggedIn {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImgView.image = UIImage(named:UserDataService.instance.avatarName)
-            userImgView.backgroundColor = UserDataService.instance.returnUIColor()
+            userImgView.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
             addChannelBtn.isHidden = false
             
         } else {
@@ -92,10 +92,6 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             tableView.reloadData()
             addChannelBtn.isHidden = true
         }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

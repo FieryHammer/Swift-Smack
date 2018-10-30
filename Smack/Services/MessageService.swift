@@ -61,6 +61,7 @@ class MessageService {
                 
                 do {
                     self.messages = try JSONDecoder().decode([Message].self, from: data)
+                    completion(true)
                 } catch let error as Any {
                     debugPrint(error)
                     completion(false)
