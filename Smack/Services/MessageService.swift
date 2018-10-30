@@ -31,22 +31,6 @@ class MessageService {
                 
                 NotificationCenter.default.post(name: NOTIFICATION_CHANNELS_LOADED, object: nil)
                 completion(true)
-//                if let json = JSON(data: data).array {
-//                    for item in json {
-//                        let name = item["name"].stringValue
-//                        let description = item["description"].stringValue
-//                        let id = item["_id"].stringValue
-//
-//                        let channel = Channel(title: name, description: description, id: id)
-//                        self.channels.append(channel)
-//                    }
-//
-//                    completion(true)
-//                }
-//            } else {
-//                completion(false)
-//                debugPrint(response.result.error as Any)
-//            }
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)

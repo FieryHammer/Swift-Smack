@@ -13,7 +13,9 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var channelNameLbl: UILabel!
     @IBOutlet weak var messageTxtBox: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var messageTxtBoxBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var sendMessageBtn: UIButton!
+    
+    var isTyping = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
+        
+        sendMessageBtn.isHidden = true
         
         view.bindKeyboard()
         
@@ -34,26 +38,26 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChange(_:)), name: NOTIFICATION_USER_DATA_DID_CHANGE, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(channelSelected(_:)), name: NOTIFICATION_CHANNEL_SELECTED, object: nil)
         
+        SocketService.instance.getMessage { (success) in
+            if success {
+                self.tableView.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    let lastIndexPath = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: true)
+                }
+            }
+        }
+        
         if AuthService.instance.isLoggedIn {
             AuthService.instance.findUserByEmail { (success) in
                 NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_DID_CHANGE, object: nil)
             }
-            
-//            MessageService.instance.findAllChannel { (success) in
-//            }
         }
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapHandler))
         
         view.addGestureRecognizer(tapGestureRecognizer)
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-//    }
     
     @IBAction func sendMessageBtnPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
@@ -74,6 +78,19 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             onLoginGetMessages()
         } else {
             channelNameLbl.text = "Please Log In"
+            tableView.reloadData()
+        }
+    }
+    
+    @IBAction func messageBoxEditing(_ sender: Any) {
+        if messageTxtBox.text == "" {
+            isTyping = false
+            sendMessageBtn.isHidden = true
+        } else {
+            if !isTyping {
+                sendMessageBtn.isHidden = false
+            }
+            isTyping = true
         }
     }
     
@@ -125,34 +142,4 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         return MessageCell()
     }
-    
-//    @objc func keyboardWillAppear(_ notification: Notification) {
-//        let duration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
-//        let curve = notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! UInt
-//        let beginingFrame = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-//        let endFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-//        let deltaY = CGFloat((endFrame.origin.y) - (beginingFrame.origin.y))
-//
-//        messageTxtBoxBottomConstraint.constant = deltaY
-//
-//        UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: curve), animations: {
-//            self.view.layoutIfNeeded()
-//        }, completion: nil)
-//    }
-//
-//    @objc func keyboardWillDisappear(_ notification: Notification) {
-//        let duration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
-//        let curve = notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! UInt
-//
-//        messageTxtBoxBottomConstraint.constant = 0
-//
-//        UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: curve), animations: {
-//            self.view.layoutIfNeeded()
-//        }, completion: nil)
-//    }
-//
-//    deinit {
-//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
-//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
-//    }
 }

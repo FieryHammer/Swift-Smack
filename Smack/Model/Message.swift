@@ -20,16 +20,16 @@ struct Message: Decodable {
     public private(set) var __v: Int?
     public private(set) var timeStamp: String!
     
-//    init(_id: String, messageBody: String!, userId: String!, channelId: String!, userName: String!, userAvatar: String!, userAvatarColor: String!, __v: Int?, timeStamp: String!) {
-//        self._id = _id
-//        self.messageBody = messageBody
-//        self.userId = userId
-//        self.channelId = channelId
-//        self.userName = userName
-//        self.userAvatar = userAvatar
-//        self.userAvatarColor = userAvatarColor
-//        self.__v = __v
-//        self.timeStamp = timeStamp
-//    }
+    init(_id: String, messageBody: String!, userId: String!, channelId: String!, userName: String!, userAvatar: String!, userAvatarColor: String!, __v: Int?, timeStamp: String!) {
+        self._id = _id
+        self.messageBody = messageBody
+        self.userId = userId
+        self.channelId = channelId
+        self.userName = userName
+        self.userAvatar = userAvatar
+        self.userAvatarColor = userAvatarColor
+        self.__v = __v
+        self.timeStamp = timeStamp
+    }
     
 }
