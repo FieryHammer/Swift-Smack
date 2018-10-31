@@ -121,8 +121,8 @@
 				F11DD196217A2921000FF20D /* RoundedButton.swift */,
 				F1E726AF217F200A007D57C8 /* AvatarCell.swift */,
 				F1E726B1217F3A6F007D57C8 /* CircleImage.swift */,
-				F1E726BC2185F036007D57C8 /* ChannelCell.swift */,
 				F18E7A1E21874FF4008ED930 /* KeyboardBoundView.swift */,
+				F1E726BC2185F036007D57C8 /* ChannelCell.swift */,
 				F18E7A20218758B9008ED930 /* MessageCell.swift */,
 			);
 			path = View;

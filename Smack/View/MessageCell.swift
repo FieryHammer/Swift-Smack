@@ -33,5 +33,4 @@ class MessageCell: UITableViewCell {
         guard let dateUnwrapped = date else { return }
         timestampLabel.text = dateFormatter.string(from: dateUnwrapped) 
     }
-
 }

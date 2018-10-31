@@ -17,15 +17,14 @@ class CircleImage: UIImageView {
         setupView()
     }
     
-    func setupView() {
-        layer.cornerRadius = frame.width / 2
-        clipsToBounds = true
-    }
-    
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
         setupView()
     }
-
+    
+    func setupView() {
+        layer.cornerRadius = frame.width / 2
+        clipsToBounds = true
+    }
 }
